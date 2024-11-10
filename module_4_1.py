@@ -1,8 +1,9 @@
 from fake_math import divide as df
 from true_math import divide as dt
 
-x = int(input('Введите первое число: '))
-y = int(input('Введите второе число: '))
+numbers=[]
+numbers.extend(input('Введите числа, в виде x, y: '))
+numbers = [int(char) for char in numbers if char.isdigit()]
 
-print(f'Фейковая математика говорит {df(x, y)}')
-print(f'Настоящая математика говорит {dt(x, y)}')
+print(f'Фейковая математика говорит {df(*numbers)}')
+print(f'Настоящая математика говорит {dt(*numbers)}')
